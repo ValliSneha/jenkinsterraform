@@ -1,6 +1,11 @@
 pipeline {
     agent any
         stages {
+            stage ("checkout from git") {
+                steps {
+                    git branch: 'master', url: 'https://github.com/ValliSneha/jenkinsterraform.git'
+                }
+            }
             stage("Install Terraform"){
                 steps {
                     script {
